@@ -2,7 +2,7 @@ use crate::shape::{Vector};
 use std::vec::IntoIter;
 use std::slice::Iter;
 use std::mem;
-use amethyst_core::ecs::{prelude::*, Component};
+use amethyst::core::ecs::{prelude::*, Component};
 
 
 pub struct Collision<Tag> {

@@ -1,6 +1,6 @@
 use crate::shape::Point;
 use crate::lines::{InEq, Line};
-use amethyst_core::{transform::Transform, math::Point3};
+use amethyst::core::{transform::Transform, math::Point3};
 use std::iter::Peekable;
 use std::slice::Iter;
 

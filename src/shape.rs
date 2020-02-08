@@ -1,5 +1,5 @@
-use amethyst_core::{transform::Transform, math::{Point2, Vector2, Vector3}};
-use amethyst_core::ecs::{prelude::*, Component};
+use amethyst::core::{transform::Transform, math::{Point2, Vector2, Vector3}};
+use amethyst::core::ecs::{prelude::*, Component};
 
 pub type Point = Point2<f32>;
 pub type Vector = Vector2<f32>;

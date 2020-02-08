@@ -1,4 +1,4 @@
-use amethyst_core::{ecs::{prelude::*, Join}, transform::Transform};
+use amethyst::core::{ecs::{prelude::*, Join}, transform::Transform};
 use std::marker::PhantomData;
 use crate::{shape::*, collisions::*};
 
