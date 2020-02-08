@@ -15,7 +15,24 @@ pub struct Shape {
 }
 
 impl Shape {
-    pub fn new(points: Vec<Point>) -> Shape {
+    pub fn new<I: IntoIterator<Item=Point>>(points: I) -> Shape {
+        let mut iter = points.into_iter().peekable();
+        let mut points = Vec::with_capacity(iter.size_hint().0);
+        let first = iter.peek();
+        if let Some(&first) = first {
+            while let Some(point) = iter.next() {
+                match iter.peek() {
+                    Some(&next) => {
+                        points.push(point);
+                        points.push(Point::from((Vector::new(point.x, point.y) + Vector::new(next.x, next.y)) / 2.0));
+                    }
+                    None => {
+                        points.push(point);
+                        points.push(Point::from((Vector::new(point.x, point.y) + Vector::new(first.x, first.y)) / 2.0));
+                    }
+                }
+            }
+        }
         let mut avg = Vector2::new(0.0, 0.0);
         for &point in &points {
             let v = Vector3::from(point); 
