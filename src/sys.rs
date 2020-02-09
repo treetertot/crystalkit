@@ -5,7 +5,7 @@ use crate::{shape::*, collisions::*};
 pub struct CollisionSystem<Tag>(PhantomData<Tag>);
 impl<T> CollisionSystem<T> {
     pub fn new() -> Self {
-        CollisionSystem(PhantomData::new())
+        CollisionSystem(PhantomData)
     }
 }
 impl<'a, T: Component + Clone + Send + Sync> System<'a> for CollisionSystem<T> {
