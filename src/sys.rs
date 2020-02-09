@@ -3,7 +3,7 @@ use std::marker::PhantomData;
 use crate::{shape::*, collisions::*};
 
 pub struct CollisionSystem<Tag>(PhantomData<Tag>);
-impl<T> CollisionSystem {
+impl<T> CollisionSystem<T> {
     pub fn new() -> Self {
         CollisionSystem(PhantomData::new())
     }
