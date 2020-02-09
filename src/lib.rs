@@ -9,4 +9,4 @@ mod tests {
 pub mod shape;
 mod lines;
 pub mod sys;
-mod collisions;
+pub mod collisions;
