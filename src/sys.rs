@@ -3,6 +3,11 @@ use std::marker::PhantomData;
 use crate::{shape::*, collisions::*};
 
 pub struct CollisionSystem<Tag>(PhantomData<Tag>);
+impl<T> CollisionSystem {
+    pub fn new() -> Self {
+        CollisionSystem(PhantomData::new())
+    }
+}
 impl<'a, T: Component + Clone + Send + Sync> System<'a> for CollisionSystem<T> {
     type SystemData = (ReadStorage<'a, Shape>, ReadStorage<'a, Transform>, ReadStorage<'a, T>, WriteStorage<'a, Collisions<T>>);
 
